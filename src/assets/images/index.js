@@ -1,0 +1,17 @@
+export const Images = {
+    amazon: require('./amazon.png'),
+    takealot: require('./takealot.jpg'),
+    arrow: require("./arrow.png"),
+    book: require("./book.png"),
+    brick: require("./brick.jpg"),
+    chatIcon: require("./chatIcon.png"),
+    close: require("./close.gif"),
+    cluster: require("./cluster.jpg"),
+    dayOfThe42: require("./day_of_the_42.png"),
+    eye: require("./eye.png"),
+    hand: require("./hand.png"),
+    magnifyingGlass: require("./magnifyingGlass.png"),
+    reload: require("./reload.png"),
+    tools: require("./tools.png"),
+    towel: require("./towel.png"),
+};

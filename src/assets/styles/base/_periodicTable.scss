@@ -1,0 +1,14 @@
+.flex-rectangle{
+  width: 100%;
+}
+.flex-rectangle:before{
+  content: "";
+  display: block;
+  padding-top: 25%;
+}
+
+.Element:hover {
+  background: white!important;
+  border: blueviolet dashed 2px!important;
+
+}
