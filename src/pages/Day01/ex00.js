@@ -8,6 +8,7 @@ import ex05 from './functions/ex05'
 import ex07 from './functions/ex07'
 import ex08 from './functions/ex08'
 import ex09 from "./functions/ex09";
+import ex10 from "./functions/ex10";
 
 //import ex02 from './functions/ex02'
 class Day01Ex00 extends Component {
@@ -106,6 +107,13 @@ class Day01Ex00 extends Component {
                 this.setState(prevState => {
                     return ({
                         text: prevState.text + '\n' + ex09(args)
+                    })
+                });
+                break;
+            case './ex10':
+                this.setState(prevState => {
+                    return ({
+                        text: prevState.text + '\n' + ex10(args)
                     })
                 });
                 break;
