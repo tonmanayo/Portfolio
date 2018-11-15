@@ -1,5 +1,5 @@
 import { takeLatest, all } from 'redux-saga/effects'
-import API from '../Services/Api'
+import API from './../services/Api'
 
 
 /* ------------- Types ------------- */

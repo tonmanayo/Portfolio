@@ -7,17 +7,22 @@ import './assets/styles/base.scss';
 import Main from './pages/Main';
 import configureStore from './config/configureStore';
 import { Provider } from 'react-redux';
+import createStore from './reducers'
+import { PersistGate } from 'redux-persist/es/integration/react'
+const {persistor, store} = createStore();
 
 
-const store = configureStore();
+
 const rootElement = document.getElementById('root');
 
 const renderApp = Component => {
     ReactDOM.render(
         <Provider store={store}>
-            <HashRouter>
-                <Component />
-            </HashRouter>
+            <PersistGate persistor={persistor}>
+                <HashRouter>
+                    <Component />
+                </HashRouter>
+            </PersistGate>
         </Provider>,
         rootElement
     );
