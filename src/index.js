@@ -5,7 +5,6 @@ import { HashRouter } from 'react-router-dom';
 import './assets/styles/base.scss';
 // import 'sweetalert/dist/sweetalert.css';
 import Main from './pages/Main';
-import configureStore from './config/configureStore';
 import { Provider } from 'react-redux';
 import createStore from './reducers'
 import { PersistGate } from 'redux-persist/es/integration/react'
@@ -32,7 +31,7 @@ renderApp(Main);
 
 if (module.hot) {
     module.hot.accept('./pages/Main', () => {
-        const NextApp = require('./pages/Main').default
+        const NextApp = require('./pages/Main').default;
         renderApp(NextApp);
     });
 }
