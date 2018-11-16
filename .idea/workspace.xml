@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="571932db-6e67-4e90-ba8d-ce1add481c46" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="571932db-6e67-4e90-ba8d-ce1add481c46" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -417,7 +415,7 @@
       <workItem from="1542132191313" duration="5016000" />
       <workItem from="1542298091504" duration="7062000" />
       <workItem from="1542342892944" duration="380000" />
-      <workItem from="1542381386928" duration="1850000" />
+      <workItem from="1542381386928" duration="2172000" />
     </task>
     <task id="LOCAL-00001" summary="- added redux-sagas complete, nned to test">
       <created>1542315053461</created>
@@ -430,7 +428,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="80387000" />
+    <option name="totallyTimeSpent" value="80709000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1440" y="0" width="1920" height="1080" extended-state="0" />
