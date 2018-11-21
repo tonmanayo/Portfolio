@@ -16,10 +16,7 @@ const create = (baseURL = BASE) => {
         baseURL,
         // here are some default headers
         headers: {
-            "Access-Control-Allow-Origin": "*",
-            "Access-Control-Allow-Credentials": "true",
-            "Access-Control-Allow-Methods": "GET,HEAD,OPTIONS,POST,PUT",
-            "Access-Control-Allow-Headers": "Access-Control-Allow-Headers, Origin,Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers"
+            "Access-Control-Content-type": "application/json",
         },
         // 10 second timeout...
         timeout: 50000
