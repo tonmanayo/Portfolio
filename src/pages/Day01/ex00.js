@@ -1,4 +1,6 @@
 import React, {Component} from 'react';
+import { connect } from 'react-redux';
+
 import ex00 from './functions/ex00'
 import ex01 from './functions/ex01'
 import ex02 from './functions/ex02'
@@ -9,6 +11,8 @@ import ex07 from './functions/ex07'
 import ex08 from './functions/ex08'
 import ex09 from "./functions/ex09";
 import ex10 from "./functions/ex10";
+import {withRouter} from "react-router-dom";
+import UserIDActions, {UserIDTypes} from './../../reducers/userIDRedux'
 
 //import ex02 from './functions/ex02'
 class Day01Ex00 extends Component {
@@ -19,7 +23,8 @@ class Day01Ex00 extends Component {
             ex02: 'notActive',
             getNumber: false
         };
-        document.title = 'Basics'
+        document.title = 'Basics';
+        this.props.userIdRequest();
     }
 
     _processRequest = () => {
@@ -192,4 +197,15 @@ class Day01Ex00 extends Component {
     }
 }
 
-export default Day01Ex00;
+
+const mapStateToProps = state => ({
+    userID: state.userID.data,
+});
+
+const mapDispatchToProps = dispatch => ({
+    userIdRequest: () => dispatch(UserIDActions.userIdRequest()),
+});
+
+export default withRouter(
+    connect(mapStateToProps, mapDispatchToProps)(Day01Ex00)
+);

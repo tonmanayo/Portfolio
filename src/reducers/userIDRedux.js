@@ -9,7 +9,7 @@ const { Types, Creators } = createActions({
     userIdFailure: null,
 });
 
-export const UserIDTypes = Types
+export const UserIDTypes = Types;
 export default Creators
 
 /* ------------- Initial State ------------- */

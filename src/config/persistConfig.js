@@ -38,8 +38,8 @@ const REDUX_PERSIST = {
         storage: storage,
         //blacklist: ['search', 'nav'],
         //whitelist: ['settings', 'contacts', 'eftBank', 'login'],
-        //stateReconciler: seamlessImmutableReconciler,
-        //transforms: [seamlessImmutableTransformCreator(transformerConfig)],
+        stateReconciler: seamlessImmutableReconciler,
+        transforms: [seamlessImmutableTransformCreator(transformerConfig)],
         //migrate: createMigrate(migrations, {debug: __DEV__})
     }
 };

@@ -1,7 +1,7 @@
 // a library to wrap and simplify api calls
 import apisauce from 'apisauce'
 
-export const BASE = 'https://api.ipify.org?format=json';
+export const BASE = 'https://stormy-fortress-25793.herokuapp.com/';
 
 // our "constructor"
 const create = (baseURL = BASE) => {
@@ -18,6 +18,7 @@ const create = (baseURL = BASE) => {
         headers: {
             'Cache-Control': 'no-cache',
             'Content-Type': 'application/json',
+            'Access-Control-Allow-Origin': '*'
         },
         // 10 second timeout...
         timeout: 50000
