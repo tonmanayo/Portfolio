@@ -16,11 +16,10 @@ const create = (baseURL = BASE) => {
         baseURL,
         // here are some default headers
         headers: {
-            'Cache-Control': 'no-cache',
-            'Content-Type': 'application/json',
-            'Access-Control-Allow-Methods': 'GET',
-            'Access-Control-Allow-Origin': '*',
-            'Access-Control-Max-Age': 86400
+            "Access-Control-Allow-Origin": "*",
+            "Access-Control-Allow-Credentials": "true",
+            "Access-Control-Allow-Methods": "GET,HEAD,OPTIONS,POST,PUT",
+            "Access-Control-Allow-Headers": "Access-Control-Allow-Headers, Origin,Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers"
         },
         // 10 second timeout...
         timeout: 50000
