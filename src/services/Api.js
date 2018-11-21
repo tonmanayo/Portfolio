@@ -18,8 +18,8 @@ const create = (baseURL = BASE) => {
         headers: {
             'Cache-Control': 'no-cache',
             'Content-Type': 'application/json',
-            'Access-Control-Allow-Methods': 'GET, POST, PUT, PATCH, POST, DELETE, OPTIONS',
-            'Access-Control-Allow-Origin': 'https://stormy-fortress-25793.herokuapp.com/',
+            'Access-Control-Allow-Methods': 'GET',
+            'Access-Control-Allow-Origin': '*',
             'Access-Control-Max-Age': 86400
         },
         // 10 second timeout...
