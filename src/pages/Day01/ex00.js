@@ -130,7 +130,7 @@ class Day01Ex00 extends Component {
             case './ex11':
                 this.setState(prevState => {
                     return ({
-                        text: prevState.text + '\n' + this.props.userID.data
+                        text: prevState.text + '\n' + this.props.userID.data.message
                     })
                 });
                 break;

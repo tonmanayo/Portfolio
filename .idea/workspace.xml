@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="571932db-6e67-4e90-ba8d-ce1add481c46" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/pages/Day01/functions/ex11.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Day01/ex00.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Day01/ex00.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/reducers/userIDRedux.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/userIDRedux.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sagas/userIpSaga.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/sagas/userIpSaga.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/Api.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/Api.js" afterDir="false" />
-    </list>
+    <list default="true" id="571932db-6e67-4e90-ba8d-ce1add481c46" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -60,7 +53,7 @@
         <counts>
           <entry key="Procfile" value="26" />
           <entry key="html" value="24" />
-          <entry key="js" value="9063" />
+          <entry key="js" value="9065" />
           <entry key="json" value="98" />
           <entry key="scss" value="73" />
           <entry key="txt" value="42" />
@@ -70,7 +63,7 @@
         <counts>
           <entry key="HTML" value="24" />
           <entry key="JSON" value="98" />
-          <entry key="JavaScript" value="9063" />
+          <entry key="JavaScript" value="9065" />
           <entry key="PLAIN_TEXT" value="68" />
           <entry key="SCSS" value="73" />
         </counts>
@@ -95,10 +88,10 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/services/Api.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="600">
+            <state relative-caret-position="564">
               <caret line="40" column="24" selection-start-line="40" selection-start-column="24" selection-end-line="40" selection-end-column="24" />
             </state>
           </provider>
@@ -116,11 +109,14 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/pages/Day01/ex00.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="13" selection-start-line="13" selection-end-line="13" />
+            <state relative-caret-position="561">
+              <caret line="132" column="76" lean-forward="true" selection-start-line="132" selection-start-column="76" selection-end-line="132" selection-end-column="76" />
+              <folding>
+                <element signature="e#0#39#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -413,7 +409,7 @@
       <workItem from="1542827126879" duration="463000" />
       <workItem from="1542827680022" duration="4118000" />
       <workItem from="1542870320268" duration="7000" />
-      <workItem from="1542910546787" duration="5487000" />
+      <workItem from="1542910546787" duration="5689000" />
     </task>
     <task id="LOCAL-00001" summary="- added redux-sagas complete, nned to test">
       <created>1542315053461</created>
@@ -426,7 +422,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="95016000" />
+    <option name="totallyTimeSpent" value="95218000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1440" y="0" width="1920" height="1080" extended-state="0" />
@@ -747,37 +743,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sagas/userIpSaga.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="22" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
-          <folding>
-            <element signature="e#0#46#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/Day01/functions/ex10.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="1" lean-forward="true" selection-end-line="13" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/Day01/ex00.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" selection-start-line="13" selection-end-line="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/Day01/functions/ex11.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/reducers/userIDRedux.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="450">
@@ -788,10 +753,44 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/sagas/userIpSaga.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="22" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
+          <folding>
+            <element signature="e#0#46#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/services/Api.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="600">
+        <state relative-caret-position="564">
           <caret line="40" column="24" selection-start-line="40" selection-start-column="24" selection-end-line="40" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/Day01/functions/ex10.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="1" lean-forward="true" selection-end-line="13" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/Day01/functions/ex11.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/Day01/ex00.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="561">
+          <caret line="132" column="76" lean-forward="true" selection-start-line="132" selection-start-column="76" selection-end-line="132" selection-end-column="76" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
