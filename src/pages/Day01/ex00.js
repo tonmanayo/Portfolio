@@ -11,8 +11,10 @@ import ex07 from './functions/ex07'
 import ex08 from './functions/ex08'
 import ex09 from "./functions/ex09";
 import ex10 from "./functions/ex10";
+
+
 import {withRouter} from "react-router-dom";
-import UserIDActions, {UserIDTypes} from './../../reducers/userIDRedux'
+import UserIDActions from './../../reducers/userIDRedux'
 
 //import ex02 from './functions/ex02'
 class Day01Ex00 extends Component {
@@ -24,8 +26,10 @@ class Day01Ex00 extends Component {
             getNumber: false
         };
         document.title = 'Basics';
-        this.props.userIdRequest();
-        console.log("userID: " + this.props.userID.data)
+    }
+
+    async componentDidMount() {
+        await this.props.userIdRequest();
     }
 
     _processRequest = () => {
@@ -120,6 +124,13 @@ class Day01Ex00 extends Component {
                 this.setState(prevState => {
                     return ({
                         text: prevState.text + '\n' + ex10(args)
+                    })
+                });
+                break;
+            case './ex11':
+                this.setState(prevState => {
+                    return ({
+                        text: prevState.text + '\n' + this.props.userID.data
                     })
                 });
                 break;

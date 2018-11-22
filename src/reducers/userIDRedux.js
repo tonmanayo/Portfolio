@@ -4,7 +4,7 @@ import Immutable from 'seamless-immutable'
 /* ------------- Types and Action Creators ------------- */
 
 const { Types, Creators } = createActions({
-    userIdSuccess: null,
+    userIdSuccess: ['data'],
     userIdRequest: null,
     userIdFailure: null,
 });
@@ -28,7 +28,7 @@ export const request = (state) =>
 
 // successful api lookup
 export const success = (state, action) => {
-    const { data } = action;
+    const {data} = action;
     return state.merge({ fetching: false, error: '', data })
 };
 

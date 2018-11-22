@@ -6,7 +6,6 @@ export function* userID(api) {
     const response = yield call(api.postUserLookup);
 
     if (response.ok) {
-        console.log(response.data);
         yield put(UserIDActions.userIdSuccess(response.data))
     } else {
         yield put(UserIDActions.userIdFailure(response.error))

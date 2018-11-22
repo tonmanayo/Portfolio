@@ -38,7 +38,7 @@ const create = (baseURL = BASE) => {
     //
 
     const postUserLookup = () =>
-        api.get('/test');
+        api.get('/userID');
 
     // const getRate = () => api.get('rate_limit')
     // const getUser = (username) => api.get('search/users', {q: username})
