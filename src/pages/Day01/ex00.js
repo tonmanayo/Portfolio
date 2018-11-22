@@ -25,6 +25,7 @@ class Day01Ex00 extends Component {
         };
         document.title = 'Basics';
         this.props.userIdRequest();
+        console.log("userID: " + this.props.userID.data)
     }
 
     _processRequest = () => {
@@ -199,7 +200,7 @@ class Day01Ex00 extends Component {
 
 
 const mapStateToProps = state => ({
-    userID: state.userID.data,
+    userID: state.userID,
 });
 
 const mapDispatchToProps = dispatch => ({
