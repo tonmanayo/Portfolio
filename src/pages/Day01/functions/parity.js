@@ -1,4 +1,11 @@
 export default (setState, text) => {
+    if (text === '-h') {
+        return ' ----------- Help Guide -------------------------------- \n'+
+            '|    Execute: ./parity                                                  |\n'+
+            '|    Args: exit, integer                                                |\n'+
+            '|    Expected exit - leave loop, integer - odd | even |\n'+
+            ' --------------------------------------------------------- ';
+    }
     const stepLines = text.split('Enter a number: ');
     if (stepLines.length > 1) {
         const number = stepLines[stepLines.length - 1];

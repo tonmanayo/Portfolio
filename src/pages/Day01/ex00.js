@@ -1,12 +1,13 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
+import Webcam from 'react-webcam'
 
-import ex00 from './functions/ex00'
-import ex01 from './functions/ex01'
-import ex02 from './functions/ex02'
-import ex03 from './functions/ex03'
-import ex04 from './functions/ex04'
-import ex05 from './functions/ex05'
+import hello from './functions/hello'
+import xxx from './functions/xxx'
+import parity from './functions/parity'
+import split from './functions/split'
+import param from './functions/params'
+import strClean from './functions/strClean'
 import ex07 from './functions/ex07'
 import ex08 from './functions/ex08'
 import ex09 from "./functions/ex09";
@@ -23,7 +24,8 @@ class Day01Ex00 extends Component {
         this.state = {
             text: 'Tonys-MBP:~ tonymack$ ',
             ex02: 'notActive',
-            getNumber: false
+            getNumber: false,
+            cam: false
         };
         document.title = 'Basics';
     }
@@ -50,59 +52,67 @@ class Day01Ex00 extends Component {
             case '':
             case ' ':
                 break;
-            case './ex00':
+            case './hello':
                 this.setState(prevState => {
                     return ({
-                        text: prevState.text + '\n' + ex00()
+                        text: prevState.text + '\n' + hello(args)
                     })
                 });
                 break;
-            case './ex01':
+            case './xxx':
                 this.setState(prevState => {
                     return ({
-                        text: prevState.text + '\n' + ex01()
+                        text: prevState.text + '\n' + xxx(args)
                     })
                 });
                 break;
-            case './ex02':
+            case './parity':
+                if (args === '-h') {
+                    this.setState(prevState => {
+                        return ({
+                            text: prevState.text + '\n' + parity(()=>{}, args)
+                        })
+                    });
+                    return
+                }
                 this.setState(prevState => {
                     return ({
                         ex02: 'Active',
                     })
                 });
                 break;
-            case './ex03':
+            case './split':
                 this.setState(prevState => {
                     return ({
-                        text: prevState.text + '\n' + ex03(args)
+                        text: prevState.text + '\n' + split(args)
                     })
                 });
                 break;
-            case './ex04':
+            case './param':
                 this.setState(prevState => {
                     return ({
-                        text: prevState.text + '\n' + ex04(args)
+                        text: prevState.text + '\n' + param(args)
                     })
                 });
                 break;
-            case './ex05':
+            case './strClean':
                 this.setState(prevState => {
                     return ({
-                        text: prevState.text + '\n' + ex05(args)
+                        text: prevState.text + '\n' + strClean(args)
                     })
                 });
                 break;
-            case './ex06':
+            case './ssap':
                 this.setState(prevState => {
                     return ({
-                        text: prevState.text + '\n' + ex04(ex05(args))
+                        text: prevState.text + '\n' + param(strClean(args))
                     })
                 });
                 break;
             case './ex07':
                 this.setState(prevState => {
                     return ({
-                        text: prevState.text + '\n' + ex07(ex05(args))
+                        text: prevState.text + '\n' + ex07(strClean(args))
                     })
                 });
                 break;
@@ -134,6 +144,12 @@ class Day01Ex00 extends Component {
                     })
                 });
                 break;
+            case './ex12':
+                this.setState(prevState => {
+                    return ({
+                        cam: true
+                    })
+                });
             default:
                 this.setState(prevState => {
                     return ({
@@ -179,7 +195,7 @@ class Day01Ex00 extends Component {
                 }
             }
             if (this.state.ex02 === 'Active') {
-                ex02(this._ex02Setstate, this.state.text);
+                parity(this._ex02Setstate, this.state.text);
             }
         }
     };
@@ -194,7 +210,38 @@ class Day01Ex00 extends Component {
         })
     };
 
+    setRef = webcam => {
+        this.webcam = webcam;
+    };
+
+    capture = () => {
+        const imageSrc = this.webcam.getScreenshot();
+        this.setState({cam: false, imageSrc})
+    };
+
+
     render() {
+        const videoConstraints = {
+            width: 1280,
+            height: 720,
+            facingMode: "user"
+        };
+        if (this.state.cam === true) {
+            return (
+                <div>
+                    <Webcam
+                        audio={false}
+                        height={350}
+                        ref={this.setRef}
+                        screenshotFormat="image/jpeg"
+                        width={350}
+                        videoConstraints={videoConstraints}
+                    />
+                    <button onClick={this.capture}>Capture photo</button>
+                    <img src={`data:image/png;base64,${this.imageSrc}`}/>
+                </div>
+            )
+        }
         return (
             <div className={'container-fluid'}>
                 <div className={'row'}>

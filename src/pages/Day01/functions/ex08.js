@@ -1,4 +1,4 @@
-import ex05 from "./ex05";
+import ex05 from "./strClean";
 
 export default (text) => {
     const regex = /^"[a-z ]+"/g;
