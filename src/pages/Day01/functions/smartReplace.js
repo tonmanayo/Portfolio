@@ -1,4 +1,10 @@
 export default (text) => {
+    if (text === '-h') {
+        return ' ----------- Help Guide -------------------------------- \n'+
+            '|    Execute: ./smartReplace                                   |\n'+
+            '|    Expected Capitalised links and titles                |\n'+
+            ' --------------------------------------------------------- ';
+    }
     const links = /<a(.+)</g;
     const title =/e=(.+)</;
     const html = '<html><head><title>Nice page</title></head>\n' +

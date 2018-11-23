@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { connect } from 'react-redux';
+import {connect} from 'react-redux';
 import Webcam from 'react-webcam'
 
 import hello from './functions/hello'
@@ -8,10 +8,10 @@ import parity from './functions/parity'
 import split from './functions/split'
 import param from './functions/params'
 import strClean from './functions/strClean'
-import ex07 from './functions/ex07'
-import ex08 from './functions/ex08'
-import ex09 from "./functions/ex09";
-import ex10 from "./functions/ex10";
+import rostring from './functions/rostring'
+import firstCleanArg from './functions/firstCleanArg'
+import epoch from "./functions/epoch";
+import smartReplace from "./functions/smartReplace";
 
 
 import {withRouter} from "react-router-dom";
@@ -37,7 +37,7 @@ class Day01Ex00 extends Component {
     _processRequest = () => {
         const strArray = this.state.text.split('Tonys-MBP:~ tonymack$ ');
         const strStrip = strArray[strArray.length - 1].replace(/\s\s+/g, ' ');
-        const exercise = strStrip.indexOf(' ') > -1 ?  strStrip.split(' ')[0] : strStrip;
+        const exercise = strStrip.indexOf(' ') > -1 ? strStrip.split(' ')[0] : strStrip;
         let args = '';
         if (strStrip.indexOf(' ') > -1) {
             args = strStrip.split(exercise + ' ')[1]
@@ -70,7 +70,8 @@ class Day01Ex00 extends Component {
                 if (args === '-h') {
                     this.setState(prevState => {
                         return ({
-                            text: prevState.text + '\n' + parity(()=>{}, args)
+                            text: prevState.text + '\n' + parity(() => {
+                            }, args)
                         })
                     });
                     return
@@ -103,41 +104,63 @@ class Day01Ex00 extends Component {
                 });
                 break;
             case './ssap':
+                if (args === '-h') {
+                    this.setState(prevState => {
+                        return ({
+                            text: prevState.text + '\n' + ' ----------- Help Guide --------------------------------- \n' +
+                                '|    Execute: ./ssap ...args                                          |\n' +
+                                '|    Expected Result: split and sorted arguments      |\n' +
+                                ' --------------------------------------------------------- '
+                        })
+                    });
+                    return
+                }
                 this.setState(prevState => {
                     return ({
                         text: prevState.text + '\n' + param(strClean(args))
                     })
                 });
                 break;
-            case './ex07':
+            case './rostring':
                 this.setState(prevState => {
                     return ({
-                        text: prevState.text + '\n' + ex07(strClean(args))
+                        text: prevState.text + '\n' + rostring(strClean(args))
                     })
                 });
                 break;
-            case './ex08':
+            case './firstCleanArg':
                 this.setState(prevState => {
                     return ({
-                        text: prevState.text + '\n' + ex08(args)
+                        text: prevState.text + '\n' + firstCleanArg(args)
                     })
                 });
                 break;
-            case './ex09':
+            case './epoch':
                 this.setState(prevState => {
                     return ({
-                        text: prevState.text + '\n' + ex09(args)
+                        text: prevState.text + '\n' + epoch(args)
                     })
                 });
                 break;
-            case './ex10':
+            case './smartReplace':
                 this.setState(prevState => {
                     return ({
-                        text: prevState.text + '\n' + ex10(args)
+                        text: prevState.text + '\n' + smartReplace(args)
                     })
                 });
                 break;
-            case './ex11':
+            case './who':
+                if (args === '-h') {
+                    this.setState(prevState => {
+                        return ({
+                            text: prevState.text + '\n' + ' ----------- Help Guide --------------------------------- \n' +
+                                '|    Execute: ./who                                                      |\n' +
+                                '|    Expected user info                                                |\n' +
+                                ' --------------------------------------------------------- '
+                        })
+                    });
+                    return
+                }
                 this.setState(prevState => {
                     return ({
                         text: prevState.text + '\n' + this.props.userID.data.message
@@ -150,6 +173,7 @@ class Day01Ex00 extends Component {
                         cam: true
                     })
                 });
+                break;
             default:
                 this.setState(prevState => {
                     return ({
@@ -216,6 +240,7 @@ class Day01Ex00 extends Component {
 
     capture = () => {
         const imageSrc = this.webcam.getScreenshot();
+        console.log(imageSrc);
         this.setState({cam: false, imageSrc})
     };
 
@@ -238,7 +263,6 @@ class Day01Ex00 extends Component {
                         videoConstraints={videoConstraints}
                     />
                     <button onClick={this.capture}>Capture photo</button>
-                    <img src={`data:image/png;base64,${this.imageSrc}`}/>
                 </div>
             )
         }
@@ -249,7 +273,7 @@ class Day01Ex00 extends Component {
                         <textarea onKeyDown={this._onKeyPress} value={this.state.text} className={'col-md-12'}
                                   style={{background: 'black', color: 'white', height: '50vh'}}/>
                     </form>
-
+                    <img  src={`${this.state.imageSrc}`} />
                 </div>
             </div>
         );

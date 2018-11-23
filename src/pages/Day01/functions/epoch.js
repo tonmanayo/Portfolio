@@ -1,4 +1,10 @@
 export default (text) => {
+    if (text === '-h')
+        return' ----------- Help Guide ----------- \n'+
+            '|    Execute: ./epoch                               |\n'+
+            '|    Format: Day Month Year hh:mm:ss  |\n'+
+            '|    Expected Result: time since epoch! |\n'+
+            ' ---------------------------------- ';
     const dayReg = /(^[0-2]\d|3[0-1])/;
     const monthReg = /(^\d{2})\s([A-Z]{1}[a-z]+)/;
     const yearReg = /(^\d{2})\s([A-Z]{1}[a-z]+)\s(\d{4})/;
