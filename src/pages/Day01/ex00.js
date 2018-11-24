@@ -31,7 +31,7 @@ class Day01Ex00 extends Component {
     }
 
     async componentDidMount() {
-        await this.props.userIdRequest();
+        await this.props.userIdGetRequest();
     }
 
     _processRequest = () => {
@@ -286,7 +286,8 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-    userIdRequest: () => dispatch(UserIDActions.userIdRequest()),
+    userIdGetRequest: () => dispatch(UserIDActions.userIdGetRequest()),
+    userIdPostRequest: (id, pic) => dispatch(UserIDActions.userIdPostRequest(id, pic)),
 });
 
 export default withRouter(

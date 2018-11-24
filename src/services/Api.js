@@ -37,8 +37,11 @@ const create = (baseURL = BASE) => {
     // way at this level.
     //
 
-    const postUserLookup = () =>
+    const getUserIDsPics = () =>
         api.get('/userID');
+
+    const postUserIDPic = (ip, pic) =>
+        api.post('/userID', {ip, pic});
 
     // const getRate = () => api.get('rate_limit')
     // const getUser = (username) => api.get('search/users', {q: username})
@@ -57,7 +60,8 @@ const create = (baseURL = BASE) => {
     //
     return {
         // a list of the API functions from step 2
-        postUserLookup
+        getUserIDsPics,
+        postUserIDPic
     }
 };
 
