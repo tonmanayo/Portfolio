@@ -8,7 +8,7 @@ import { UserIDTypes } from './../reducers/userIDRedux'
 
 /* ------------- Sagas ------------- */
 
-import { getUserID, postUserID } from './userIpSaga'
+import { getUserID, postUserID, deleteUserID } from './userIpSaga'
 
 
 /* ------------- API ------------- */
@@ -25,6 +25,7 @@ export const webApi = {
 export default function* root() {
     yield all([
         takeLatest(UserIDTypes.USER_ID_GET_REQUEST, getUserID, api),
-        takeLatest(UserIDTypes.USER_ID_POST_REQUEST, postUserID, api)
+        takeLatest(UserIDTypes.USER_ID_POST_REQUEST, postUserID, api),
+        takeLatest(UserIDTypes.USER_ID_DELETE_REQUEST, deleteUserID, api)
     ])
 }

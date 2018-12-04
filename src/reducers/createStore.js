@@ -1,4 +1,4 @@
-import { createStore, applyMiddleware } from 'redux'
+import { createStore, applyMiddleware, compose } from 'redux'
 import createSagaMiddleware from 'redux-saga'
 import ReduxPersist from './../config/persistConfig'
 import { persistReducer, persistStore } from 'redux-persist'
@@ -14,12 +14,12 @@ export default (rootReducer, rootSaga) => {
     const sagaMiddleware = createSagaMiddleware();
     middleware.push(sagaMiddleware);
     middleware.push(createLogger);
-
     /* ------------- Assemble Middleware ------------- */
-
-    enhancers.push(applyMiddleware(...middleware));
+    const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+    enhancers.push(composeEnhancer(applyMiddleware(...middleware)));
 
     const reducer = persistReducer(ReduxPersist.storeConfig, rootReducer);
+
 
     /* ------------- AutoRehydrate Enhancer ------------- */
     let store = createStore(reducer, ...enhancers);

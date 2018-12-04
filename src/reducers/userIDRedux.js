@@ -6,8 +6,9 @@ import Immutable from 'seamless-immutable'
 const { Types, Creators } = createActions({
     userIdPostRequest: ['ip', 'pic'],
     userIdGetRequest: null,
+    userIdDeleteRequest: ['id'],
     userIdGetSuccess: ['ips', 'pics'],
-    userIdPostSuccess: null,
+    userIdPostSuccess: ['data'],
     userIdFailure: null,
 });
 
@@ -21,7 +22,8 @@ export const INITIAL_STATE = Immutable({
     error: '',
     data: [],
     message: '',
-    title: ''
+    title: '',
+    ip: ''
 });
 
 /* ------------- Reducers ------------- */
@@ -31,14 +33,14 @@ export const Request = (state) =>
     state.merge({ fetching: true });
 
 // successful api lookup
-export const getSuccess = (state, action) => {
-    const {message, data, title} = action;
-    return state.merge({ fetching: false, error: '', message, data, title })
+export const getSuccess = (state, {ips}) => {
+    const {message, data, title, ip} = ips;
+    return state.merge({ fetching: false, error: '', message, data, title, ip})
 };
 
 export const postSuccess = (state, action) => {
     const {data} = action;
-    return state.merge({ fetching: false, error: '', data })
+    return state.merge({ fetching: false, error: '', message: data })
 };
 
 // Something went wrong somewhere.
@@ -50,6 +52,7 @@ export const failure = (state, {error}) =>
 export const reducer = createReducer(INITIAL_STATE, {
     [Types.USER_ID_GET_REQUEST]: Request,
     [Types.USER_ID_POST_REQUEST]: Request,
+    [Types.USER_ID_DELETE_REQUEST]: Request,
     [Types.USER_ID_POST_SUCCESS]: postSuccess,
     [Types.USER_ID_GET_SUCCESS]: getSuccess,
     [Types.USER_ID_FAILURE]: failure

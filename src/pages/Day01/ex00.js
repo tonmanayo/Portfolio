@@ -163,7 +163,7 @@ class Day01Ex00 extends Component {
                 }
                 this.setState(prevState => {
                     return ({
-                        text: prevState.text + '\n' + this.props.userID.data.message
+                        text: prevState.text + '\n' + this.props.userID.message
                     })
                 });
                 break;
@@ -185,7 +185,6 @@ class Day01Ex00 extends Component {
     };
 
     _onKeyPress = async (e) => {
-        console.log(e.key);
         const strArray = this.state.text.split('Tonys-MBP:~ tonymack$ ');
         const word = strArray[strArray.length - 1].replace(/\s\s+/g, ' ');
         e.preventDefault();
@@ -240,7 +239,7 @@ class Day01Ex00 extends Component {
 
     capture = () => {
         const imageSrc = this.webcam.getScreenshot();
-        console.log(imageSrc);
+        this.props.userIdPostRequest('112', imageSrc);
         this.setState({cam: false, imageSrc})
     };
 
@@ -262,7 +261,7 @@ class Day01Ex00 extends Component {
                         width={350}
                         videoConstraints={videoConstraints}
                     />
-                    <button onClick={this.capture}>Capture photo</button>
+                    <button onClick={() => this.capture()}>Capture photo</button>
                 </div>
             )
         }
@@ -273,6 +272,9 @@ class Day01Ex00 extends Component {
                         <textarea onKeyDown={this._onKeyPress} value={this.state.text} className={'col-md-12'}
                                   style={{background: 'black', color: 'white', height: '50vh'}}/>
                     </form>
+                    {
+                        this.props.userID.data.length > 0 ? this.props.userID.data.map(pic => <img src={pic.pic} />) : <div />
+                    }
                     <img  src={`${this.state.imageSrc}`} />
                 </div>
             </div>
