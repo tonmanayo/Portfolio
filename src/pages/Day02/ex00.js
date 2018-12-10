@@ -19,8 +19,7 @@ class Day02Ex00 extends Component {
 
   capture = () => {
     const imageSrc = this.webcam.getScreenshot();
-    this.props.userIdPostRequest('112', imageSrc);
-    // this.props.userIdGetRequest();
+    this.props.userIdPostRequest(this.props.userID.ip, imageSrc);
     this.setState({cam: false, imageSrc})
   };
 
