@@ -31,6 +31,10 @@ html, body {
   margin-bottom: 30px;
 }
 
+*:focus {
+  outline: none;
+}
+
 .rbc-calendar {
   .rbc-toolbar .rbc-toolbar-label {
     font-size: 22px;

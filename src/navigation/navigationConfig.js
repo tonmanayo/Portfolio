@@ -3,6 +3,7 @@ import Forms from './../pages/Forms';
 import Day00 from './../pages/Day00'
 import Day01 from './../pages/Day01'
 import Day02 from './../pages/Day02'
+import Day03 from './../pages/Day03'
 
 export const menuItems = [
     {
@@ -49,6 +50,19 @@ export const menuItems = [
       {
         childName: 'ex00',
         childPath: '/day02/ex00'
+      },
+    ]
+  },
+  {
+    id: 'day03',
+    parentName: 'Day 03',
+    parentPath: '/day03',
+    page: Day03,
+    image: 'pe-7s-plugin',
+    childNames: [
+      {
+        childName: 'ex00',
+        childPath: '/day03/ex00'
       },
     ]
   },
