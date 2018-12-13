@@ -1,17 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/src/reducers/createStore.js" line="17" />
-  </component>
   <component name="ChangeListManager">
     <list default="true" id="571932db-6e67-4e90-ba8d-ce1add481c46" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/pages/Day03/ex00.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/Day03/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/styles/base.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/styles/base.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/navigation/navigationConfig.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/navigation/navigationConfig.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Day03/ex00.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Day03/ex00.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -26,16 +18,16 @@
     <session id="2098107163">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="35" />
+          <entry key="project.closed" value="37" />
           <entry key="project.open.time.0" value="7" />
           <entry key="project.open.time.1" value="9" />
           <entry key="project.open.time.10" value="1" />
           <entry key="project.open.time.4" value="5" />
-          <entry key="project.open.time.5" value="4" />
+          <entry key="project.open.time.5" value="6" />
           <entry key="project.open.time.6" value="5" />
           <entry key="project.open.time.7" value="2" />
           <entry key="project.open.time.8" value="3" />
-          <entry key="project.opened" value="36" />
+          <entry key="project.opened" value="38" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -68,25 +60,25 @@
         <counts>
           <entry key="Procfile" value="26" />
           <entry key="html" value="24" />
-          <entry key="js" value="15002" />
+          <entry key="js" value="16392" />
           <entry key="json" value="98" />
           <entry key="scss" value="83" />
-          <entry key="txt" value="72" />
+          <entry key="txt" value="104" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="HTML" value="24" />
           <entry key="JSON" value="98" />
-          <entry key="JavaScript" value="15002" />
-          <entry key="PLAIN_TEXT" value="98" />
+          <entry key="JavaScript" value="16392" />
+          <entry key="PLAIN_TEXT" value="130" />
           <entry key="SCSS" value="83" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.js.language.service.starts">
         <counts>
-          <entry key="ESLintLanguageService" value="33" />
-          <entry key="LanguageService" value="35" />
+          <entry key="ESLintLanguageService" value="34" />
+          <entry key="LanguageService" value="37" />
           <entry key="TypeScriptServerServiceImpl" value="1" />
         </counts>
       </usages-collector>
@@ -107,8 +99,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/pages/Day01/ex00.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="505">
-              <caret line="268" column="47" lean-forward="true" selection-start-line="268" selection-start-column="12" selection-end-line="268" selection-end-column="47" />
+            <state relative-caret-position="3765">
+              <caret line="268" column="47" selection-start-line="268" selection-start-column="12" selection-end-line="268" selection-end-column="47" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -119,8 +111,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/pages/Day03/ex00.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="530">
-              <caret line="108" column="49" selection-start-line="108" selection-start-column="49" selection-end-line="108" selection-end-column="49" />
+            <state relative-caret-position="225">
+              <caret line="15" column="598" selection-start-line="15" selection-start-column="598" selection-end-line="15" selection-end-column="598" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -208,7 +200,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>serve</find>
       <find>/app</find>
       <find>appBuild</find>
       <find>build</find>
@@ -232,12 +223,13 @@
       <find>modal</find>
       <find>renderField</find>
       <find>ReactModal</find>
-      <find>messages</find>
       <find>send</find>
       <find>handleUsernameInput</find>
       <find>console</find>
       <find>addMessage</find>
       <find>focu</find>
+      <find>add</find>
+      <find>messages</find>
     </findStrings>
     <replaceStrings>
       <replace>Images</replace>
@@ -325,7 +317,7 @@
       <path value="$PROJECT_DIR$/package.json" />
     </packageJsonPaths>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
+  <component name="ProjectFrameBounds" fullScreen="true">
     <option name="x" value="1440" />
     <option name="y" value="-362" />
     <option name="width" value="2560" />
@@ -529,7 +521,9 @@
       <workItem from="1544416605522" duration="4000" />
       <workItem from="1544466492019" duration="4076000" />
       <workItem from="1544504419365" duration="5000" />
-      <workItem from="1544553797218" duration="5576000" />
+      <workItem from="1544553797218" duration="6012000" />
+      <workItem from="1544590514186" duration="1000" />
+      <workItem from="1544726778961" duration="4866000" />
     </task>
     <task id="LOCAL-00001" summary="- added redux-sagas complete, nned to test">
       <created>1542315053461</created>
@@ -552,17 +546,25 @@
       <option name="project" value="LOCAL" />
       <updated>1544466895262</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="- socket io, one 2 one messaging">
+      <created>1544561531390</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1544561531390</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="160265000" />
+    <option name="totallyTimeSpent" value="165568000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1440" y="0" width="1920" height="1080" extended-state="6" />
+    <frame x="1440" y="0" width="1920" height="1080" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18104367" />
+      <window_info id="Storybook" side_tool="true" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18051118" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -576,7 +578,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.2" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.2" />
       <window_info anchor="bottom" id="TypeScript" order="11" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -594,7 +596,8 @@
     <MESSAGE value="- added redux-sagas complete, nned to test" />
     <MESSAGE value="- deleted pic" />
     <MESSAGE value="- day02 kinda done" />
-    <option name="LAST_COMMIT_MESSAGE" value="- day02 kinda done" />
+    <MESSAGE value="- socket io, one 2 one messaging" />
+    <option name="LAST_COMMIT_MESSAGE" value="- socket io, one 2 one messaging" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$USER_HOME$/afrihostApp/afrihost/App/Containers/Login.js">
@@ -867,9 +870,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="8" column="2" selection-start-line="8" selection-start-column="2" selection-end-line="8" selection-end-column="2" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assets/styles/base.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="36" lean-forward="true" selection-start-line="36" selection-end-line="36" />
         </state>
       </provider>
     </entry>
@@ -877,6 +884,16 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
           <caret line="5" column="35" selection-start-line="5" selection-start-column="30" selection-end-line="5" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/Day01/ex00.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3765">
+          <caret line="268" column="47" selection-start-line="268" selection-start-column="12" selection-end-line="268" selection-end-column="47" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -937,27 +954,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/Day01/ex00.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="505">
-          <caret line="268" column="47" lean-forward="true" selection-start-line="268" selection-start-column="12" selection-end-line="268" selection-end-column="47" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/assets/styles/base.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="36" lean-forward="true" selection-start-line="36" selection-end-line="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/Day03/ex00.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="530">
-          <caret line="108" column="49" selection-start-line="108" selection-start-column="49" selection-end-line="108" selection-end-column="49" />
+        <state relative-caret-position="225">
+          <caret line="15" column="598" selection-start-line="15" selection-start-column="598" selection-end-line="15" selection-end-column="598" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>

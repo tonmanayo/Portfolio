@@ -13,7 +13,7 @@ class Day02Ex00 extends Component {
       userModal: true,
       username: '',
       message: '',
-      messages: [],
+      messages: [{user: 'agent', message: ' agent testing '}, {user: 'client', message: 'client testing'}],
     };
     this.props.userIdGetRequest();
     this.socket = io('http://localhost:3000')
@@ -62,6 +62,7 @@ class Day02Ex00 extends Component {
   };
 
   render() {
+    const {user} = this.state;
 
     return (
       <div className={'container-fluid'}>
@@ -99,25 +100,66 @@ class Day02Ex00 extends Component {
           </div>
         </ReactModal>
         <div className={'row'}>
-          <div style={{height: '70vh', backgroundColor: '#efefef'}}>
+          <div className={'col-md-12 col-xs-12'}
+               style={{height: '70vh', backgroundColor: '#efefef', overflowY: 'scroll'}}>
+            <div className="row">
+              <div className={'col-md-12 col-xs-12'}>
+                {
+                  this.state.messages.map(message => (
+                    <div className="row">
+                      {
+                        message.user === 'agent' ? (<div className={'col-md-1 col-sx-1'} >
+                          <div style={{height: 100, borderRadius: 50, backgroundColor: 'green', width: 100, border: 'solid 2px white'}}>
+                            <p style={{textAlign: 'center', paddingTop: 40}}>P</p>
+                          </div>
+                        </div>) : (<div className={'col-md-11 col-sx-11'}>
+                          <div className="row">
+                            <div style={{backgroundColor: 'white', height: 90, marginTop: 5, borderRadius: 20, marginLeft: '5px', position: 'absolute', right: 0}}>
+                                <p style={{paddingTop: 35, margin: '0 10px 0 10px'}}>{message.message}</p>
+                            </div>
+                          </div>
+                        </div>)
+                      }
+                      {
+                        message.user === 'agent' ? (<div className={'col-md-11 col-sx-11'}>
+                          <div className="row">
+                            <div style={{backgroundColor: 'white', height: 90, marginTop: 5, borderRadius: 20, marginRight: '5px', position: 'absolute', left: 0}}>
+                              <p style={{paddingTop: 35, margin: '0 10px 0 10px'}}>{message.message}</p>
+                            </div>
+                          </div>
+                        </div>) : (<div className={'col-md-1 col-sx-1'} >
+                          <div style={{height: 100, borderRadius: 50, backgroundColor: 'green', width: 100, border: 'solid 2px white'}}>
+                            <p style={{textAlign: 'center', paddingTop: 40}}>P</p>
+                          </div>
+                        </div>)
+                      }
+                    </div>
+                  ))
+                }
 
-          </div>
-          <div style={{height: '6vh', backgroundColor: '#efefef', borderTop: '1px'}}>
-            <form onSubmit={this.send}>
-              <div className="form-group col-md-10 no-highlight" style={{paddingTop: 5, borderRadius: '5px', backgroundColor: 'white', margin: 5}}>
-                <input
-                  placeholder={'send a message...'}
-                  value={this.state.message}
-                  onChange={this.handleMessageInput}
-                  style={{height: '4vh', width: '100%', borderWidth: '0px'}}
-                />
               </div>
-              <div className="col-md-1" style={{margin: 5}}>
-                <button type="submit" className="btn btn-fill btn-info">Submit</button>
+            </div>
+          </div>
+        </div>
+        <div className="row">
+          <div className="col-md-12" style={{height: '6vh', backgroundColor: '#efefef', borderTop: '1px'}}>
+            <form onSubmit={this.send}>
+              <div className="row">
+                <div className="form-group col-md-10 no-highlight"
+                     style={{paddingTop: 5, borderRadius: '5px', backgroundColor: 'white', margin: 5}}>
+                  <input
+                    placeholder={'send a message...'}
+                    value={this.state.message}
+                    onChange={this.handleMessageInput}
+                    style={{height: '4vh', width: '100%', borderWidth: '0px'}}
+                  />
+                </div>
+                <div className="col-md-1" style={{margin: 5}}>
+                  <button type="submit" className="btn btn-fill btn-info">Submit</button>
+                </div>
               </div>
             </form>
           </div>
-
         </div>
       </div>
     )
