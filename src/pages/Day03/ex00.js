@@ -3,7 +3,7 @@ import UserIDActions from "../../reducers/userIDRedux";
 import {withRouter} from "react-router-dom";
 import connect from "react-redux/es/connect/connect";
 import io from 'socket.io-client'
-
+import UserMessage from "./../../components/UserMessage"
 import ReactModal from 'react-modal';
 
 class Day02Ex00 extends Component {
@@ -13,10 +13,13 @@ class Day02Ex00 extends Component {
       userModal: true,
       username: '',
       message: '',
-      messages: [{user: 'agent', message: ' agent testing '}, {user: 'client', message: 'client testing'}],
+      type: 'agent',
+      messages: [],
+      agents: [],
+      clients: []
     };
+    this.socket = io('http://localhost:3000');
     this.props.userIdGetRequest();
-    this.socket = io('http://localhost:3000')
   }
 
   addMessage = data => {
@@ -25,18 +28,43 @@ class Day02Ex00 extends Component {
     console.log(this.state.messages);
   };
 
+  addAgents = agent => {
+    console.log(agent);
+    this.setState(prevState => ({
+        agents: [...prevState.agents, agent]
+      }));
+    console.log('this.state.agents');
+    console.log(this.state.agents);
+  };
+
+  addClients = client => {
+    console.log(client);
+    this.setState(prevState => ({
+      clients: [...prevState.clients, client]
+    }));
+    console.log('this.state.clients');
+    console.log(this.state.clients);
+  };
+
   componentDidMount() {
+    this.scrollToBottom();
     this.socket.on('RECEIVE_MESSAGE', (data) => {
       this.addMessage(data);
+    });
+    this.socket.on('UPDATE_AGENTS', (username) => {
+      this.addAgents(username);
+    });
+    this.socket.on('UPDATE_CLIENTS', (username) => {
+      this.addClients(username);
     });
   }
 
   send = ev => {
     const {username, message} = this.state;
     ev.preventDefault();
-    this.socket.emit('SEND_MESSAGE', {
+    this.socket.emit(`SEND_MESSAGE_${this.state.type}`, {
       username,
-      message
+      message,
     });
     this.setState({message: ''});
   };
@@ -44,7 +72,10 @@ class Day02Ex00 extends Component {
   handleSubmit = () => {
     this.setState({
       userModal: false,
-    })
+    });
+
+    this.socket.emit('NEW_USER', {type: this.state.type, username: this.state.username});
+
   };
 
   handleUsernameInput = (username) => {
@@ -61,9 +92,15 @@ class Day02Ex00 extends Component {
 
   };
 
-  render() {
-    const {user} = this.state;
+  scrollToBottom = () => {
+    this.messagesEnd.scrollIntoView({ behavior: "smooth" });
+  };
 
+  componentDidUpdate() {
+    this.scrollToBottom();
+  }
+
+  render() {
     return (
       <div className={'container-fluid'}>
         <ReactModal
@@ -89,55 +126,37 @@ class Day02Ex00 extends Component {
               </div>
               <div className="content">
                 <div className="form-group">
+                  <div className="col-md-6 col-md-offset-3" style={{alignText: "left"}}>
                   <input
                     value={this.state.username}
                     onChange={this.handleUsernameInput}
                   />
+                  </div>
+                  <div className="col-md-3" style={{float: "left"}}>
+                  <input onClick={() => this.setState({type: 'agent'})} type="radio" name="type" value="agent" /> Agent<br />
+                  <input onClick={() => this.setState({type: 'client'})} type="radio" name="type" value="client" /> Client<br />
+                </div>
                 </div>
                 <button onClick={this.handleSubmit} type="submit" className="btn btn-fill btn-info">Submit</button>
+
               </div>
             </div>
           </div>
         </ReactModal>
         <div className={'row'}>
           <div className={'col-md-12 col-xs-12'}
-               style={{height: '70vh', backgroundColor: '#efefef', overflowY: 'scroll'}}>
+               style={{height: '70vh', backgroundColor: '#efefef', overflow: 'auto'}}>
             <div className="row">
               <div className={'col-md-12 col-xs-12'}>
                 {
                   this.state.messages.map(message => (
-                    <div className="row">
-                      {
-                        message.user === 'agent' ? (<div className={'col-md-1 col-sx-1'} >
-                          <div style={{height: 100, borderRadius: 50, backgroundColor: 'green', width: 100, border: 'solid 2px white'}}>
-                            <p style={{textAlign: 'center', paddingTop: 40}}>P</p>
-                          </div>
-                        </div>) : (<div className={'col-md-11 col-sx-11'}>
-                          <div className="row">
-                            <div style={{backgroundColor: 'white', height: 90, marginTop: 5, borderRadius: 20, marginLeft: '5px', position: 'absolute', right: 0}}>
-                                <p style={{paddingTop: 35, margin: '0 10px 0 10px'}}>{message.message}</p>
-                            </div>
-                          </div>
-                        </div>)
-                      }
-                      {
-                        message.user === 'agent' ? (<div className={'col-md-11 col-sx-11'}>
-                          <div className="row">
-                            <div style={{backgroundColor: 'white', height: 90, marginTop: 5, borderRadius: 20, marginRight: '5px', position: 'absolute', left: 0}}>
-                              <p style={{paddingTop: 35, margin: '0 10px 0 10px'}}>{message.message}</p>
-                            </div>
-                          </div>
-                        </div>) : (<div className={'col-md-1 col-sx-1'} >
-                          <div style={{height: 100, borderRadius: 50, backgroundColor: 'green', width: 100, border: 'solid 2px white'}}>
-                            <p style={{textAlign: 'center', paddingTop: 40}}>P</p>
-                          </div>
-                        </div>)
-                      }
-                    </div>
+                    <UserMessage message={message}/>
                   ))
                 }
-
               </div>
+            </div>
+            <div style={{ float:"left", clear: "both" }}
+                 ref={(el) => { this.messagesEnd = el; }}>
             </div>
           </div>
         </div>
@@ -176,6 +195,5 @@ const mapDispatchToProps = dispatch => ({
   userIdDeleteRequest: (id) => dispatch(UserIDActions.userIdDeleteRequest(id)),
 });
 
-export default withRouter(
-  connect(mapStateToProps, mapDispatchToProps)(Day02Ex00)
-);
+
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Day02Ex00));

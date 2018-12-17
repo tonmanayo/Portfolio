@@ -13,8 +13,6 @@ class Radio extends Component {
     let {
       input,
       label,
-      type,
-      meta: { touched, error, warning },
       disabled
     } = this.props;
     return (
